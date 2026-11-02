@@ -1,561 +1,138 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Rocky is an independent SOX and technology risk learning lab.">
-  <title>Rocky | SOX & Technology Risk Lab</title>
-
-  <style>
-    :root {
-      --page-bg: #f1f5f9;
-      --surface: #ffffff;
-      --text: #1e293b;
-      --muted: #64748b;
-      --primary: #176b50;
-      --primary-hover: #10543e;
-      --border: #dbe2ea;
-      --info-bg: #eef2ff;
-      --info-text: #373f73;
-      --success-bg: #ecfdf5;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background: var(--page-bg);
-      color: var(--text);
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-    }
-
-    header {
-      background: #172b4d;
-      color: white;
-      padding: 24px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 30px;
-    }
-
-    header p {
-      margin: 4px 0 0;
-      color: #dbeafe;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
-
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-      margin-bottom: 20px;
-    }
-
-    .eyebrow {
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 4px 9px;
-      border-radius: 5px;
-      background: var(--info-bg);
-      color: var(--info-text);
-      font-size: 12px;
-      font-weight: bold;
-    }
-
-    .muted {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .callout {
-      padding: 14px 16px;
-      background: var(--info-bg);
-      color: var(--info-text);
-      border-radius: 8px;
-      margin: 16px 0;
-    }
-
-    label {
-      display: block;
-      font-weight: bold;
-      margin: 20px 0 8px;
-    }
-
-    textarea {
-      display: block;
-      width: 100%;
-      min-height: 100px;
-      padding: 12px;
-      border: 1px solid #cbd5e1;
-      border-radius: 7px;
-      background: white;
-      color: var(--text);
-      font: inherit;
-      resize: vertical;
-    }
-
-    button {
-      padding: 11px 16px;
-      margin: 8px 8px 0 0;
-      border: 0;
-      border-radius: 7px;
-      background: var(--primary);
-      color: white;
-      font-size: 14px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: var(--primary-hover);
-    }
-
-    button.secondary {
-      background: #e2e8f0;
-      color: #1e293b;
-    }
-
-    button.secondary:hover {
-      background: #cbd5e1;
-    }
-
-    button:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
-
-    .panel {
-      padding: 18px;
-      margin-top: 18px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-    }
-
-    .panel h3 {
-      margin-top: 0;
-    }
-
-    .panel li {
-      margin-bottom: 9px;
-    }
-
-    .reference {
-      border-left: 4px solid #81b9a2;
-      background: #f7fbf8;
-    }
-
-    .saved {
-      padding: 12px;
-      margin: 14px 0;
-      border-radius: 7px;
-      background: var(--success-bg);
-      font-size: 14px;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    footer {
-      text-align: center;
-      color: var(--muted);
-      padding: 25px;
-      font-size: 13px;
-    }
-
-    a {
-      color: #4357a5;
-    }
-
-    @media (max-width: 600px) {
-      main {
-        margin-top: 16px;
-        padding: 0 12px;
-      }
-
-      .card {
-        padding: 18px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Rocky is an independent interactive SOX and technology risk learning lab.">
+<title>Rocky | SOX & Technology Risk Lab</title>
+<style>
+:root{--bg:#f7f4f0;--surface:#fffdfa;--ink:#302d3a;--muted:#716d7c;--lav:#e9e2f5;--lav-ink:#554574;--sage:#dcebe1;--sage-ink:#315d49;--rose:#f5e1e3;--cream:#f6edda;--line:#e5dfea;--primary:#665485;--primary-dark:#4f3f6e;--good:#e1f2e6;--warn:#fff0d6}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{background:var(--lav);border-bottom:1px solid var(--line);padding:26px max(20px,calc((100% - 1040px)/2))}header h1{margin:0;font-size:2rem;letter-spacing:-.04em}header p{margin:3px 0 0;color:var(--lav-ink)}
+main{max-width:1040px;margin:28px auto;padding:0 18px}.intro{padding:25px;background:var(--surface);border:1px solid var(--line);border-radius:18px;margin-bottom:18px}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.75rem;font-weight:750;color:var(--muted)}h2,h3{line-height:1.25}h2{margin:.25rem 0 .75rem}h3{margin-top:1.25rem}p{max-width:78ch}.muted{color:var(--muted);font-size:.92rem}.pill{display:inline-block;background:var(--sage);color:var(--sage-ink);border-radius:99px;padding:3px 10px;font-size:.8rem;font-weight:700}
+.nav{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}.nav button{background:var(--surface);color:var(--ink);border:1px solid var(--line)}.nav button[aria-current="page"]{background:var(--primary);color:white;border-color:var(--primary)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;margin-bottom:18px;box-shadow:0 4px 16px #47375a0a}.hidden{display:none!important}.callout{padding:14px 16px;background:var(--lav);color:var(--lav-ink);border-radius:10px;margin:16px 0}.callout.sage{background:var(--sage);color:var(--sage-ink)}.callout.rose{background:var(--rose);color:#75444d}
+button{font:inherit;font-size:.94rem;font-weight:650;border:0;border-radius:9px;background:var(--primary);color:#fff;padding:10px 15px;margin:5px 5px 5px 0;cursor:pointer}button:hover{background:var(--primary-dark)}button:focus-visible,a:focus-visible,textarea:focus-visible{outline:3px solid #b69be4;outline-offset:2px}button.secondary{background:#eee9f3;color:var(--ink);border:1px solid var(--line)}button.secondary:hover{background:var(--lav)}button:disabled{opacity:.5;cursor:not-allowed}
+.choice-list{display:grid;gap:10px;margin:14px 0}.choice{display:block;text-align:left;background:#fff;color:var(--ink);border:1px solid var(--line);padding:13px 15px;font-weight:500}.choice:hover{background:var(--lav);color:var(--ink)}.choice.selected{border:2px solid var(--primary);background:var(--lav)}.feedback{border-radius:10px;padding:15px;margin:15px 0}.feedback.good{background:var(--good)}.feedback.try{background:var(--warn)}.feedback h4{margin:0 0 5px}.progress-track{height:8px;background:#ece7ef;border-radius:99px;overflow:hidden;margin:8px 0 18px}.progress-fill{height:100%;width:0;background:var(--primary);transition:width .2s}
+.evidence-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.evidence{border:1px solid var(--line);border-radius:12px;padding:15px;background:#fff}.evidence h4{margin:0 0 5px}.evidence button{margin-top:8px}.evidence-content{padding:12px;background:#f8f5fb;border-radius:8px;margin-top:10px;font-size:.94rem}
+label{display:block;font-weight:700;margin:18px 0 7px}textarea{width:100%;min-height:90px;padding:12px;border:1px solid #d6cfdf;border-radius:9px;font:inherit;background:white;color:var(--ink)}.status{padding:12px;background:var(--sage);color:var(--sage-ink);border-radius:9px;margin:12px 0}.reference-link{display:block;padding:13px 0;border-bottom:1px solid var(--line)}a{color:#554574}footer{text-align:center;color:var(--muted);padding:25px;font-size:.86rem}
+@media(max-width:600px){header{padding:20px}main{margin:15px auto;padding:0 12px}.card,.intro{padding:18px}}
+</style>
 </head>
-
 <body>
-  <header>
-    <h1>Rocky</h1>
-    <p>SOX & Technology Risk Lab</p>
-  </header>
-
-  <main>
-    <section class="card" id="dashboard">
-      <p class="eyebrow">Interactive learning environment</p>
-      <h2>Learn by doing</h2>
-
-      <p>
-        Practice technology risk and internal control concepts
-        through fictional business cases, workpapers, and
-        evidence-based exercises.
-      </p>
-
-      <h3>Current case: Apex Software</h3>
-      <span class="tag">Fictional company</span>
-
-      <p>
-        Apex Software is a fictional publicly traded enterprise
-        software company. It uses an enterprise financial system
-        to record revenue and customer transactions.
-      </p>
-
-      <div class="callout">
-        <strong>Your role:</strong> You are supporting the
-        company's technology risk program. You are not acting
-        as an independent external auditor.
-      </div>
-
-      <h3>Assignment 001: Terminated-user access</h3>
-      <p>
-        A former employee's account may still be active in a
-        financial application. Analyze the risk, its potential
-        reporting impact, and a suitable control.
-      </p>
-
-      <p id="progress" class="muted">Loading your progress...</p>
-
-      <button id="startButton">Open workpaper</button>
-    </section>
-
-    <section class="card hidden" id="workpaper">
-      <p class="eyebrow">Workpaper 001 · Risk assessment</p>
-      <h2>Terminated-user access</h2>
-
-      <h3>Business scenario</h3>
-      <p>
-        Apex Software uses a financial application to process
-        customer transactions and record revenue. Human Resources
-        maintains employee termination records. IT administers
-        application access.
-      </p>
-
-      <p>
-        During a preliminary review, the technology risk team
-        learns that the company does not have a documented,
-        consistently followed process for confirming that
-        terminated employees lose access to the financial application.
-      </p>
-
-      <p class="muted">
-        This is fictional scenario information. No actual company
-        or real control failure is being described.
-      </p>
-
-      <form id="workpaperForm">
-        <label for="risk">
-          1. Identify the risk
-        </label>
-        <textarea
-          id="risk"
-          required
-          placeholder="What could go wrong?"
-        ></textarea>
-
-        <label for="impact">
-          2. Explain the potential financial-reporting impact
-        </label>
-        <textarea
-          id="impact"
-          required
-          placeholder="How could the risk affect financial records or reporting?"
-        ></textarea>
-
-        <label for="control">
-          3. Propose a management control
-        </label>
-        <textarea
-          id="control"
-          required
-          placeholder="Who should do what, when, and what evidence should be retained?"
-        ></textarea>
-
-        <button type="submit">Save workpaper</button>
-        <button class="secondary" type="button" id="backButton">
-          Back to dashboard
-        </button>
-      </form>
-
-      <div id="saveStatus" class="saved hidden" role="status"></div>
-
-      <section id="reviewSection" class="panel hidden">
-        <h3>Review criteria</h3>
-        <p>
-          Use these criteria to review your work. They are a
-          learning checklist, not an automated audit opinion.
-        </p>
-
-        <ul>
-          <li>
-            <strong>Risk:</strong> Does your answer identify
-            unauthorized access after termination?
-          </li>
-          <li>
-            <strong>Reporting impact:</strong> Does it explain
-            how unauthorized transactions or changes could
-            affect financial records or reported amounts?
-          </li>
-          <li>
-            <strong>Control design:</strong> Does the control
-            identify a responsible owner, a trigger or frequency,
-            and the required access-removal action?
-          </li>
-          <li>
-            <strong>Evidence:</strong> Does it identify records
-            that could demonstrate the process occurred, such as
-            termination notifications and access-removal logs?
-          </li>
-          <li>
-            <strong>Precision:</strong> Does the proposed process
-            help prevent or detect the relevant risk in a timely
-            manner?
-          </li>
-        </ul>
-
-        <p class="muted">
-          A control's suitability depends on the company's actual
-          systems, risks, other controls, and financial-reporting scope.
-        </p>
-
-        <button type="button" id="referenceButton">
-          Show reference solution
-        </button>
-      </section>
-
-      <section id="referenceSection" class="panel reference hidden">
-        <h3>Reference solution</h3>
-        <p class="muted">
-          Illustrative example for learning. It is not the only
-          acceptable answer or a substitute for a company-specific
-          risk assessment.
-        </p>
-
-        <h4>Risk</h4>
-        <p>
-          A terminated employee may retain access to the financial
-          application and use it to make unauthorized transactions
-          or changes to financial data.
-        </p>
-
-        <h4>Potential financial-reporting impact</h4>
-        <p>
-          Unauthorized transactions or changes could affect the
-          accuracy, completeness, or validity of recorded revenue
-          or related financial information. The actual impact
-          depends on the access granted and the transactions affected.
-        </p>
-
-        <h4>Example management control</h4>
-        <p>
-          HR sends termination notifications to an assigned IT
-          access administrator. IT disables the individual's
-          relevant application access according to a defined
-          timeframe. A designated reviewer periodically compares
-          termination records with access-removal records,
-          investigates exceptions, and documents resolution.
-        </p>
-
-        <h4>Potential evidence</h4>
-        <ul>
-          <li>Employee termination report or approved notification.</li>
-          <li>Application account-disablement record or audit log.</li>
-          <li>Evidence of the review and any exception follow-up.</li>
-        </ul>
-
-        <h4>What would testing involve?</h4>
-        <p>
-          A reviewer could inspect a defined sample of termination
-          records, trace each item to access-removal evidence, compare
-          dates against the company's documented requirement, and
-          investigate exceptions. The actual test scope and sample
-          would depend on the control and the applicable methodology.
-        </p>
-
-        <h4>Important distinction</h4>
-        <p>
-          Documenting a control does not prove it operated effectively.
-          Design assessment and operating-effectiveness testing require
-          appropriate evidence. Rocky's example does not constitute
-          a real audit conclusion.
-        </p>
-
-        <h4>Learning source</h4>
-        <p>
-          <a
-            href="https://pcaobus.org/oversight/standards/auditing-standards/details/AS2201"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            PCAOB AS 2201: Audit of Internal Control Over Financial Reporting
-          </a>
-        </p>
-        <p class="muted">
-          AS 2201 addresses external auditor responsibilities.
-          Rocky uses it to teach relevant ICFR concepts while
-          distinguishing those responsibilities from management's.
-        </p>
-
-        <button type="button" class="secondary" id="hideReferenceButton">
-          Hide reference solution
-        </button>
-      </section>
-    </section>
-  </main>
-
-  <footer>
-    Rocky · Independent educational simulation
-    <br>
-    Fictional companies, scenarios, and evidence only.
-  </footer>
-
-  <script>
-    // The case content is separate from the learner's answers.
-    const caseStudy = {
-      id: "apex-001",
-      company: "Apex Software",
-      title: "Terminated-user access",
-      learningObjectives: [
-        "Identify a technology risk",
-        "Connect the risk to financial reporting",
-        "Propose a management control",
-        "Identify potential evidence"
-      ],
-      referenceSolution: {
-        risk:
-          "A terminated employee may retain access to the financial application.",
-        impact:
-          "Unauthorized transactions or changes could affect financial reporting.",
-        control:
-          "HR notifies IT, IT removes access, and a reviewer checks records and exceptions."
-      }
-    };
-
-    const STORAGE_KEY = "rocky-workpaper-" + caseStudy.id;
-
-    const dashboard = document.getElementById("dashboard");
-    const workpaper = document.getElementById("workpaper");
-    const form = document.getElementById("workpaperForm");
-    const saveStatus = document.getElementById("saveStatus");
-    const reviewSection = document.getElementById("reviewSection");
-    const referenceSection = document.getElementById("referenceSection");
-
-    function loadWorkpaper() {
-      try {
-        const saved = localStorage.getItem(STORAGE_KEY);
-        return saved ? JSON.parse(saved) : null;
-      } catch (error) {
-        return null;
-      }
-    }
-
-    function updateProgress() {
-      const saved = loadWorkpaper();
-
-      document.getElementById("progress").textContent = saved
-        ? "Workpaper saved locally · Last saved: " + saved.savedAt
-        : "Workpapers completed: 0";
-    }
-
-    function openWorkpaper() {
-      dashboard.classList.add("hidden");
-      workpaper.classList.remove("hidden");
-
-      const saved = loadWorkpaper();
-
-      if (saved) {
-        document.getElementById("risk").value = saved.risk || "";
-        document.getElementById("impact").value = saved.impact || "";
-        document.getElementById("control").value = saved.control || "";
-
-        saveStatus.textContent =
-          "Your previous answers were restored from this browser.";
-        saveStatus.classList.remove("hidden");
-        reviewSection.classList.remove("hidden");
-      }
-    }
-
-    function saveWorkpaper(event) {
-      event.preventDefault();
-
-      const submission = {
-        caseId: caseStudy.id,
-        risk: document.getElementById("risk").value.trim(),
-        impact: document.getElementById("impact").value.trim(),
-        control: document.getElementById("control").value.trim(),
-        savedAt: new Date().toLocaleString()
-      };
-
-      try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(submission));
-
-        saveStatus.textContent =
-          "Workpaper saved in this browser. Your answers have not been graded.";
-        saveStatus.classList.remove("hidden");
-
-        reviewSection.classList.remove("hidden");
-        referenceSection.classList.add("hidden");
-
-        updateProgress();
-      } catch (error) {
-        saveStatus.textContent =
-          "The browser could not save your work. You can still review the criteria.";
-        saveStatus.classList.remove("hidden");
-        reviewSection.classList.remove("hidden");
-      }
-    }
-
-    document.getElementById("startButton").addEventListener(
-      "click",
-      openWorkpaper
-    );
-
-    document.getElementById("backButton").addEventListener("click", function() {
-      workpaper.classList.add("hidden");
-      dashboard.classList.remove("hidden");
-      updateProgress();
-    });
-
-    document.getElementById("referenceButton").addEventListener(
-      "click",
-      function() {
-        referenceSection.classList.remove("hidden");
-      }
-    );
-
-    document.getElementById("hideReferenceButton").addEventListener(
-      "click",
-      function() {
-        referenceSection.classList.add("hidden");
-      }
-    );
-
-    form.addEventListener("submit", saveWorkpaper);
-
-    updateProgress();
-  </script>
+<header><h1>Rocky</h1><p>SOX & Technology Risk Lab · Learn by doing</p></header>
+<main>
+<section class="intro">
+ <p class="eyebrow">Independent learning project</p><h2>Build judgment, not just vocabulary.</h2>
+ <p>Learn internal control concepts, practice with fictional evidence, and see why a risk professional would make a particular decision. Rocky is an educational simulation, not audit advice or a certification.</p>
+ <span class="pill">Fictional company: Apex Software</span>
+ <div class="callout"><strong>Your role:</strong> You are supporting a company's technology risk program. You are not acting as its independent external auditor.</div>
+ <p id="overallProgress" class="muted">Your learning progress is stored in this browser only.</p>
+</section>
+<nav class="nav" aria-label="Learning sections">
+ <button data-view="lesson" aria-current="page">1. Learn the basics</button>
+ <button data-view="scenario">2. Investigate evidence</button>
+ <button data-view="workpaper">3. Practice workpaper</button>
+ <button data-view="references">Reference library</button>
+</nav>
+<section class="card view" id="lesson">
+ <p class="eyebrow">Module 1 · Foundations</p><h2>SOX, ICFR, and why controls matter</h2>
+ <p><strong>Learning goal:</strong> Explain the purpose of internal control over financial reporting (ICFR), distinguish management's role from an external auditor's role, and recognize what makes a control testable.</p>
+ <h3>1. What is SOX?</h3><p>The Sarbanes–Oxley Act of 2002 introduced reforms intended to strengthen corporate accountability and financial reporting. Section 404 addresses management's assessment of internal control over financial reporting and, for applicable issuers, an independent auditor's attestation.</p>
+ <h3>2. What is ICFR?</h3><p>ICFR is a process designed to provide reasonable assurance about the reliability of financial reporting and the preparation of financial statements for external purposes. Controls help reduce the risk that material errors or fraud will go undetected or unprevented.</p>
+ <div class="callout sage"><strong>Think in cause and effect:</strong> risk → control objective → control activity → evidence → evaluation. A policy existing on paper does not, by itself, prove a control operated.</div>
+ <h3>3. Who does what?</h3><p><strong>Management</strong> owns and maintains the company's controls and is responsible for its ICFR assessment. <strong>External auditors</strong> independently audit ICFR when required and express an opinion under the applicable auditing standards. A technology risk analyst may support management by documenting risks, coordinating evidence, and tracking exceptions, depending on their role.</p>
+ <h3>4. Design versus operation</h3><p><strong>Design:</strong> if performed as intended by a competent person, could the control prevent or detect the relevant error or fraud in time? <strong>Operating effectiveness:</strong> did the control actually operate as designed, by the right person, with appropriate consistency and evidence?</p>
+ <div class="callout rose"><strong>Common trap:</strong> “The company has a policy” is not enough to conclude the control is effective. You need to understand the actual control activity and evaluate appropriate evidence.</div>
+ <hr style="border:0;border-top:1px solid var(--line);margin:24px 0">
+ <h3>Knowledge check</h3><p id="quizCounter" class="muted">Question 1 of 4</p><div class="progress-track"><div class="progress-fill" id="quizProgress"></div></div>
+ <h3 id="questionText">Loading question…</h3><div id="choices" class="choice-list"></div><div id="quizFeedback" aria-live="polite"></div>
+ <button id="checkAnswer">Check answer</button><button id="nextQuestion" class="secondary hidden">Next question</button><button id="resetQuiz" class="secondary hidden">Try again</button>
+</section>
+<section class="card view hidden" id="scenario">
+ <p class="eyebrow">Case 001 · Access management</p><h2>Investigate the terminated employee</h2>
+ <p>Apex Software uses a financial application to process customer transactions and record revenue. HR records employee departures; IT manages system access. A preliminary review raises a question about whether terminated employees' access is removed promptly.</p>
+ <p><strong>Your task:</strong> inspect the fictional evidence below before deciding what to do next. Open each evidence item; do not assume that a single record proves the whole control worked.</p>
+ <div class="evidence-grid">
+  <article class="evidence"><h4>Evidence A · HR termination record</h4><p class="muted">Employee: Jordan Lee · Termination effective: 14 Oct · Status: Confirmed</p><button class="secondary" data-evidence="hr">Open record</button><div class="evidence-content hidden" id="evidence-hr">HR record HR-1042 shows Jordan Lee's employment ended on 14 October. It does not show whether application access was disabled.</div></article>
+  <article class="evidence"><h4>Evidence B · Access log</h4><p class="muted">System: Apex Finance · Account: jlee · Last login: 16 Oct</p><button class="secondary" data-evidence="log">Open log</button><div class="evidence-content hidden" id="evidence-log">The fictional application log records a successful login for account jlee on 16 October, two days after the termination effective date. Confirm identity mapping and timestamps before drawing a conclusion.</div></article>
+  <article class="evidence"><h4>Evidence C · IT ticket</h4><p class="muted">Ticket IT-8821 · Request: disable account · Status: Closed</p><button class="secondary" data-evidence="ticket">Open ticket</button><div class="evidence-content hidden" id="evidence-ticket">Ticket IT-8821 was created on 14 October and marked closed on 17 October. The ticket has no attached screenshot or system-generated disablement log in the supplied case file.</div></article>
+ </div>
+ <h3>Decision 1: What is the strongest next step?</h3><p>Choose the most defensible action based on the evidence available so far.</p>
+ <div class="choice-list" id="scenarioChoices">
+  <button class="choice" data-scenario="policy">Accept the closed ticket as proof that access was removed on time.</button>
+  <button class="choice" data-scenario="verify">Request system-generated account status or disablement logs, reconcile the identity, and investigate the post-termination login.</button>
+  <button class="choice" data-scenario="blame">Conclude that IT intentionally violated the control.</button>
+ </div>
+ <div id="scenarioFeedback" aria-live="polite"></div>
+ <h3>Decision 2: What can you conclude?</h3><p>After reviewing the supplied records, choose the most accurate conclusion.</p>
+ <div class="choice-list" id="conclusionChoices">
+  <button class="choice" data-conclusion="pass">The control passed because the ticket is closed.</button>
+  <button class="choice" data-conclusion="exception">There is a potential exception that needs follow-up; the supplied evidence does not establish exactly when access was disabled or explain the login.</button>
+  <button class="choice" data-conclusion="fraud">Fraud definitely occurred.</button>
+ </div>
+ <div id="conclusionFeedback" aria-live="polite"></div>
+ <button id="finishScenario" class="hidden">Mark scenario reviewed</button>
+ <p class="muted">This simulated evidence is intentionally incomplete. A responsible reviewer distinguishes an observed fact, a potential exception, and a final conclusion supported by sufficient appropriate evidence.</p>
+</section>
+<section class="card view hidden" id="workpaper">
+ <p class="eyebrow">Practice · Workpaper 001</p><h2>Document your reasoning</h2><p>Use your own words. Save your draft, then compare it with the illustrative reference solution. Rocky does not grade your response automatically.</p>
+ <form id="workpaperForm">
+  <label for="risk">1. What is the risk?</label><textarea id="risk" required placeholder="What could go wrong, and why does it matter?"></textarea>
+  <label for="impact">2. What is the potential financial-reporting impact?</label><textarea id="impact" required placeholder="Connect the technology risk to financial records or reporting."></textarea>
+  <label for="control">3. Propose a management control</label><textarea id="control" required placeholder="Who does what, when, and what evidence is retained?"></textarea>
+  <label for="evidence">4. What evidence would you request to test whether it operated?</label><textarea id="evidence" required placeholder="Name specific records and what you would compare."></textarea>
+  <button type="submit">Save my workpaper</button><button type="button" class="secondary" id="showModel">Show reference solution</button>
+ </form>
+ <div id="saveStatus" class="status hidden" aria-live="polite"></div>
+ <div id="modelSolution" class="callout sage hidden"><h3>Illustrative reference solution</h3><p><strong>Risk:</strong> A terminated employee may retain access to a financial application and make unauthorized transactions or changes.</p><p><strong>Potential impact:</strong> Unauthorized activity could affect the validity, accuracy, or completeness of revenue or related financial information; actual impact depends on permissions and activity.</p><p><strong>Example control:</strong> HR sends timely termination notifications to a designated IT access administrator, who disables relevant access within a defined timeframe. A reviewer periodically reconciles termination records to access-removal records, investigates exceptions, and documents resolution.</p><p><strong>Evidence:</strong> HR termination report, application account status or disablement audit log, timestamps, reviewer sign-off, and exception resolution records. A ticket marked closed alone may not prove the precise action or timing.</p><p><strong>Testing approach:</strong> Define the population and period, select a justified sample, trace termination records to system-generated access-removal evidence, compare timing against the documented requirement, and investigate exceptions. The scope depends on the actual control and methodology.</p></div>
+</section>
+<section class="card view hidden" id="references">
+ <p class="eyebrow">Source library</p><h2>Learn from primary sources</h2><p>These links are starting points, not a claim that Rocky reproduces an entire standard. Standards and regulatory requirements can change; check the official source and applicable version.</p>
+ <a class="reference-link" href="https://pcaobus.org/oversight/standards/auditing-standards/details/AS2201" target="_blank" rel="noopener noreferrer"><strong>PCAOB AS 2201 — An Audit of Internal Control Over Financial Reporting</strong><br><span class="muted">External auditor responsibilities; useful for understanding control design, operating effectiveness, and evaluating deficiencies.</span></a>
+ <a class="reference-link" href="https://www.sec.gov/rules/interp/2007/33-8810.pdf" target="_blank" rel="noopener noreferrer"><strong>SEC Release 33-8810 — Management's Report on Internal Control</strong><br><span class="muted">SEC interpretive guidance on management's evaluation of ICFR.</span></a>
+ <a class="reference-link" href="https://www.sec.gov/oca/controlfaq1004" target="_blank" rel="noopener noreferrer"><strong>SEC Staff FAQ on Management's Report on ICFR</strong><br><span class="muted">Staff guidance on management's responsibilities for assessment, documentation, and testing.</span></a>
+ <a class="reference-link" href="https://www.coso.org/internal-control" target="_blank" rel="noopener noreferrer"><strong>COSO — Internal Control</strong><br><span class="muted">Framework overview. Full framework materials may require purchase; Rocky does not reproduce copyrighted framework text.</span></a>
+ <div class="callout"><strong>Role distinction:</strong> PCAOB AS 2201 is an auditor-facing standard. Management's control ownership and assessment responsibilities are related but not identical to the external auditor's responsibilities.</div>
+</section>
+</main>
+<footer>Rocky · Independent educational simulation · Fictional companies, people, and evidence only.<br>Progress is stored locally in this browser and does not sync across devices.</footer>
+<script>
+const KEY="rocky-learning-v3";
+const state={quizIndex:0,selected:null,quizDone:false,scenarioChoices:{},scenarioDone:false};
+const questions=[
+ {q:"Which statement best describes ICFR?",choices:["A list of IT policies maintained for compliance only.","A process designed to provide reasonable assurance about reliable external financial reporting.","A guarantee that fraud and error cannot happen."],correct:1,why:"ICFR provides reasonable assurance, not absolute assurance. It focuses on the reliability of external financial reporting."},
+ {q:"Who is primarily responsible for establishing and maintaining a company's ICFR?",choices:["The external auditor alone.","Management, with responsibilities that may be supported by control owners and other teams.","The software vendor."],correct:1,why:"Management owns and maintains the company's controls and is responsible for its ICFR assessment. External auditors independently evaluate and report when required."},
+ {q:"A policy says terminated-user access must be removed. What does that prove?",choices:["The control operated effectively.","The company has documented an expectation, but operation still needs appropriate evidence.","All former employees have lost access."],correct:1,why:"A written policy describes an expectation. You need evidence of what happened in practice, including timing and exceptions."},
+ {q:"Which question best evaluates operating effectiveness?",choices:["Does the control sound reasonable on paper?","Did the control operate as designed, by the appropriate person, with suitable evidence during the period?","Does the company have an IT department?"],correct:1,why:"Operating effectiveness concerns actual operation over the relevant period. Design and operation are related but distinct evaluations."}
+];
+function readState(){try{return JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){return {}}}
+function persist(patch){const old=readState();try{localStorage.setItem(KEY,JSON.stringify({...old,...patch}))}catch(e){} updateOverall()}
+function updateOverall(){const s=readState();const done=(s.quizComplete?1:0)+(s.scenarioComplete?1:0)+(s.workpaper?1:0);document.getElementById("overallProgress").textContent="Progress: "+done+" of 3 learning activities completed · Saved in this browser only."}
+function showView(id){document.querySelectorAll(".view").forEach(v=>v.classList.toggle("hidden",v.id!==id));document.querySelectorAll("[data-view]").forEach(b=>{if(b.dataset.view===id)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current")});window.scrollTo({top:0,behavior:"smooth"})}
+document.querySelectorAll("[data-view]").forEach(b=>b.addEventListener("click",()=>showView(b.dataset.view)));
+function renderQuestion(){const q=questions[state.quizIndex];state.selected=null;document.getElementById("quizCounter").textContent="Question "+(state.quizIndex+1)+" of "+questions.length;document.getElementById("quizProgress").style.width=(state.quizIndex/questions.length*100)+"%";document.getElementById("questionText").textContent=q.q;const box=document.getElementById("choices");box.replaceChildren();q.choices.forEach((c,i)=>{const b=document.createElement("button");b.className="choice";b.textContent=c;b.type="button";b.addEventListener("click",()=>{state.selected=i;box.querySelectorAll("button").forEach(x=>x.classList.remove("selected"));b.classList.add("selected");document.getElementById("quizFeedback").replaceChildren();document.getElementById("checkAnswer").disabled=false});box.appendChild(b)});document.getElementById("quizFeedback").replaceChildren();document.getElementById("checkAnswer").classList.remove("hidden");document.getElementById("checkAnswer").disabled=true;document.getElementById("nextQuestion").classList.add("hidden");document.getElementById("resetQuiz").classList.add("hidden")}
+document.getElementById("checkAnswer").addEventListener("click",()=>{if(state.selected===null)return;const q=questions[state.quizIndex];const ok=state.selected===q.correct;const box=document.getElementById("quizFeedback");box.className="feedback "+(ok?"good":"try");box.innerHTML="<h4>"+(ok?"That's right.":"Not quite — let's unpack it.")+"</h4><p>"+q.why+"</p>";document.getElementById("checkAnswer").classList.add("hidden");if(state.quizIndex<questions.length-1){document.getElementById("nextQuestion").classList.remove("hidden");document.getElementById("nextQuestion").textContent="Next question"}else{document.getElementById("quizProgress").style.width="100%";persist({quizComplete:true});document.getElementById("resetQuiz").classList.remove("hidden");document.getElementById("nextQuestion").classList.add("hidden");box.innerHTML+="<p><strong>Module complete.</strong> You can retry the questions anytime. Completion means you reached the end, not that Rocky has certified your competence.</p>"}});
+document.getElementById("nextQuestion").addEventListener("click",()=>{state.quizIndex++;renderQuestion()});
+document.getElementById("resetQuiz").addEventListener("click",()=>{state.quizIndex=0;renderQuestion()});
+document.querySelectorAll("[data-evidence]").forEach(b=>b.addEventListener("click",()=>{const el=document.getElementById("evidence-"+b.dataset.evidence);el.classList.toggle("hidden");b.textContent=el.classList.contains("hidden")?"Open record":"Close record"}));
+const scenarioFeedback={
+ policy:{ok:false,title:"A closed ticket is not enough",text:"A status label does not establish the exact disablement time or prove the action occurred. Request system-generated evidence and compare it with the requirement."},
+ verify:{ok:true,title:"Strong next step",text:"You are seeking evidence that can verify the account status and timing, while treating the post-termination login as something to investigate rather than jumping to a conclusion."},
+ blame:{ok:false,title:"Avoid assuming intent",text:"The records raise a concern, but they do not establish intent. Confirm the account identity, timestamps, system state, and explanation before reaching a conclusion."}
+};
+document.querySelectorAll("[data-scenario]").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll("[data-scenario]").forEach(x=>x.classList.remove("selected"));b.classList.add("selected");state.scenarioChoices.first=b.dataset.scenario;const f=scenarioFeedback[b.dataset.scenario];const el=document.getElementById("scenarioFeedback");el.className="feedback "+(f.ok?"good":"try");el.innerHTML="<h4>"+f.title+"</h4><p>"+f.text+"</p>";persist({scenarioFirstChoice:b.dataset.scenario})}));
+const conclusionFeedback={
+ pass:{ok:false,title:"This conclusion goes too far",text:"A closed ticket is not enough to establish that the control operated on time. The access log is also a contradictory signal that needs investigation."},
+ exception:{ok:true,title:"Careful, evidence-based conclusion",text:"The records indicate a potential exception. Follow-up is needed to validate the user, determine when access was removed, and understand the login before finalizing the result."},
+ fraud:{ok:false,title:"Do not infer fraud from incomplete evidence",text:"The records suggest a possible access-control issue, not proof that fraud occurred. Document facts, investigate, and reach conclusions only when supported."}
+};
+document.querySelectorAll("[data-conclusion]").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll("[data-conclusion]").forEach(x=>x.classList.remove("selected"));b.classList.add("selected");state.scenarioChoices.conclusion=b.dataset.conclusion;const f=conclusionFeedback[b.dataset.conclusion];const el=document.getElementById("conclusionFeedback");el.className="feedback "+(f.ok?"good":"try");el.innerHTML="<h4>"+f.title+"</h4><p>"+f.text+"</p>";document.getElementById("finishScenario").classList.remove("hidden");persist({scenarioConclusion:b.dataset.conclusion})}));
+document.getElementById("finishScenario").addEventListener("click",()=>{persist({scenarioComplete:true});document.getElementById("finishScenario").textContent="Scenario reviewed ✓";document.getElementById("finishScenario").disabled=true;document.getElementById("scenarioFeedback").insertAdjacentHTML("beforeend","<p><strong>Debrief:</strong> Evidence can conflict. A ticket, a log, and an HR record answer different questions; reconcile them rather than relying on one record in isolation.</p>")});
+const form=document.getElementById("workpaperForm");const fields=["risk","impact","control","evidence"];function loadWorkpaper(){const s=readState();if(s.workpaper){fields.forEach(k=>document.getElementById(k).value=s.workpaper[k]||"");document.getElementById("saveStatus").textContent="Previous draft restored from this browser.";document.getElementById("saveStatus").classList.remove("hidden")}}
+form.addEventListener("submit",e=>{e.preventDefault();const workpaper={};fields.forEach(k=>workpaper[k]=document.getElementById(k).value.trim());persist({workpaper});document.getElementById("saveStatus").textContent="Draft saved in this browser. Your answers have not been automatically graded.";document.getElementById("saveStatus").classList.remove("hidden")});
+document.getElementById("showModel").addEventListener("click",()=>document.getElementById("modelSolution").classList.toggle("hidden"));
+loadWorkpaper();updateOverall();renderQuestion();
+</script>
 </body>
 </html>
