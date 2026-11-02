@@ -1,0 +1,561 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rocky is an independent SOX and technology risk learning lab.">
+  <title>Rocky | SOX & Technology Risk Lab</title>
+
+  <style>
+    :root {
+      --page-bg: #f1f5f9;
+      --surface: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --primary: #176b50;
+      --primary-hover: #10543e;
+      --border: #dbe2ea;
+      --info-bg: #eef2ff;
+      --info-text: #373f73;
+      --success-bg: #ecfdf5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--page-bg);
+      color: var(--text);
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #172b4d;
+      color: white;
+      padding: 24px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    header p {
+      margin: 4px 0 0;
+      color: #dbeafe;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 9px;
+      border-radius: 5px;
+      background: var(--info-bg);
+      color: var(--info-text);
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .callout {
+      padding: 14px 16px;
+      background: var(--info-bg);
+      color: var(--info-text);
+      border-radius: 8px;
+      margin: 16px 0;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin: 20px 0 8px;
+    }
+
+    textarea {
+      display: block;
+      width: 100%;
+      min-height: 100px;
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 7px;
+      background: white;
+      color: var(--text);
+      font: inherit;
+      resize: vertical;
+    }
+
+    button {
+      padding: 11px 16px;
+      margin: 8px 8px 0 0;
+      border: 0;
+      border-radius: 7px;
+      background: var(--primary);
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: var(--primary-hover);
+    }
+
+    button.secondary {
+      background: #e2e8f0;
+      color: #1e293b;
+    }
+
+    button.secondary:hover {
+      background: #cbd5e1;
+    }
+
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .panel {
+      padding: 18px;
+      margin-top: 18px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .panel h3 {
+      margin-top: 0;
+    }
+
+    .panel li {
+      margin-bottom: 9px;
+    }
+
+    .reference {
+      border-left: 4px solid #81b9a2;
+      background: #f7fbf8;
+    }
+
+    .saved {
+      padding: 12px;
+      margin: 14px 0;
+      border-radius: 7px;
+      background: var(--success-bg);
+      font-size: 14px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 25px;
+      font-size: 13px;
+    }
+
+    a {
+      color: #4357a5;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        margin-top: 16px;
+        padding: 0 12px;
+      }
+
+      .card {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Rocky</h1>
+    <p>SOX & Technology Risk Lab</p>
+  </header>
+
+  <main>
+    <section class="card" id="dashboard">
+      <p class="eyebrow">Interactive learning environment</p>
+      <h2>Learn by doing</h2>
+
+      <p>
+        Practice technology risk and internal control concepts
+        through fictional business cases, workpapers, and
+        evidence-based exercises.
+      </p>
+
+      <h3>Current case: Apex Software</h3>
+      <span class="tag">Fictional company</span>
+
+      <p>
+        Apex Software is a fictional publicly traded enterprise
+        software company. It uses an enterprise financial system
+        to record revenue and customer transactions.
+      </p>
+
+      <div class="callout">
+        <strong>Your role:</strong> You are supporting the
+        company's technology risk program. You are not acting
+        as an independent external auditor.
+      </div>
+
+      <h3>Assignment 001: Terminated-user access</h3>
+      <p>
+        A former employee's account may still be active in a
+        financial application. Analyze the risk, its potential
+        reporting impact, and a suitable control.
+      </p>
+
+      <p id="progress" class="muted">Loading your progress...</p>
+
+      <button id="startButton">Open workpaper</button>
+    </section>
+
+    <section class="card hidden" id="workpaper">
+      <p class="eyebrow">Workpaper 001 · Risk assessment</p>
+      <h2>Terminated-user access</h2>
+
+      <h3>Business scenario</h3>
+      <p>
+        Apex Software uses a financial application to process
+        customer transactions and record revenue. Human Resources
+        maintains employee termination records. IT administers
+        application access.
+      </p>
+
+      <p>
+        During a preliminary review, the technology risk team
+        learns that the company does not have a documented,
+        consistently followed process for confirming that
+        terminated employees lose access to the financial application.
+      </p>
+
+      <p class="muted">
+        This is fictional scenario information. No actual company
+        or real control failure is being described.
+      </p>
+
+      <form id="workpaperForm">
+        <label for="risk">
+          1. Identify the risk
+        </label>
+        <textarea
+          id="risk"
+          required
+          placeholder="What could go wrong?"
+        ></textarea>
+
+        <label for="impact">
+          2. Explain the potential financial-reporting impact
+        </label>
+        <textarea
+          id="impact"
+          required
+          placeholder="How could the risk affect financial records or reporting?"
+        ></textarea>
+
+        <label for="control">
+          3. Propose a management control
+        </label>
+        <textarea
+          id="control"
+          required
+          placeholder="Who should do what, when, and what evidence should be retained?"
+        ></textarea>
+
+        <button type="submit">Save workpaper</button>
+        <button class="secondary" type="button" id="backButton">
+          Back to dashboard
+        </button>
+      </form>
+
+      <div id="saveStatus" class="saved hidden" role="status"></div>
+
+      <section id="reviewSection" class="panel hidden">
+        <h3>Review criteria</h3>
+        <p>
+          Use these criteria to review your work. They are a
+          learning checklist, not an automated audit opinion.
+        </p>
+
+        <ul>
+          <li>
+            <strong>Risk:</strong> Does your answer identify
+            unauthorized access after termination?
+          </li>
+          <li>
+            <strong>Reporting impact:</strong> Does it explain
+            how unauthorized transactions or changes could
+            affect financial records or reported amounts?
+          </li>
+          <li>
+            <strong>Control design:</strong> Does the control
+            identify a responsible owner, a trigger or frequency,
+            and the required access-removal action?
+          </li>
+          <li>
+            <strong>Evidence:</strong> Does it identify records
+            that could demonstrate the process occurred, such as
+            termination notifications and access-removal logs?
+          </li>
+          <li>
+            <strong>Precision:</strong> Does the proposed process
+            help prevent or detect the relevant risk in a timely
+            manner?
+          </li>
+        </ul>
+
+        <p class="muted">
+          A control's suitability depends on the company's actual
+          systems, risks, other controls, and financial-reporting scope.
+        </p>
+
+        <button type="button" id="referenceButton">
+          Show reference solution
+        </button>
+      </section>
+
+      <section id="referenceSection" class="panel reference hidden">
+        <h3>Reference solution</h3>
+        <p class="muted">
+          Illustrative example for learning. It is not the only
+          acceptable answer or a substitute for a company-specific
+          risk assessment.
+        </p>
+
+        <h4>Risk</h4>
+        <p>
+          A terminated employee may retain access to the financial
+          application and use it to make unauthorized transactions
+          or changes to financial data.
+        </p>
+
+        <h4>Potential financial-reporting impact</h4>
+        <p>
+          Unauthorized transactions or changes could affect the
+          accuracy, completeness, or validity of recorded revenue
+          or related financial information. The actual impact
+          depends on the access granted and the transactions affected.
+        </p>
+
+        <h4>Example management control</h4>
+        <p>
+          HR sends termination notifications to an assigned IT
+          access administrator. IT disables the individual's
+          relevant application access according to a defined
+          timeframe. A designated reviewer periodically compares
+          termination records with access-removal records,
+          investigates exceptions, and documents resolution.
+        </p>
+
+        <h4>Potential evidence</h4>
+        <ul>
+          <li>Employee termination report or approved notification.</li>
+          <li>Application account-disablement record or audit log.</li>
+          <li>Evidence of the review and any exception follow-up.</li>
+        </ul>
+
+        <h4>What would testing involve?</h4>
+        <p>
+          A reviewer could inspect a defined sample of termination
+          records, trace each item to access-removal evidence, compare
+          dates against the company's documented requirement, and
+          investigate exceptions. The actual test scope and sample
+          would depend on the control and the applicable methodology.
+        </p>
+
+        <h4>Important distinction</h4>
+        <p>
+          Documenting a control does not prove it operated effectively.
+          Design assessment and operating-effectiveness testing require
+          appropriate evidence. Rocky's example does not constitute
+          a real audit conclusion.
+        </p>
+
+        <h4>Learning source</h4>
+        <p>
+          <a
+            href="https://pcaobus.org/oversight/standards/auditing-standards/details/AS2201"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            PCAOB AS 2201: Audit of Internal Control Over Financial Reporting
+          </a>
+        </p>
+        <p class="muted">
+          AS 2201 addresses external auditor responsibilities.
+          Rocky uses it to teach relevant ICFR concepts while
+          distinguishing those responsibilities from management's.
+        </p>
+
+        <button type="button" class="secondary" id="hideReferenceButton">
+          Hide reference solution
+        </button>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    Rocky · Independent educational simulation
+    <br>
+    Fictional companies, scenarios, and evidence only.
+  </footer>
+
+  <script>
+    // The case content is separate from the learner's answers.
+    const caseStudy = {
+      id: "apex-001",
+      company: "Apex Software",
+      title: "Terminated-user access",
+      learningObjectives: [
+        "Identify a technology risk",
+        "Connect the risk to financial reporting",
+        "Propose a management control",
+        "Identify potential evidence"
+      ],
+      referenceSolution: {
+        risk:
+          "A terminated employee may retain access to the financial application.",
+        impact:
+          "Unauthorized transactions or changes could affect financial reporting.",
+        control:
+          "HR notifies IT, IT removes access, and a reviewer checks records and exceptions."
+      }
+    };
+
+    const STORAGE_KEY = "rocky-workpaper-" + caseStudy.id;
+
+    const dashboard = document.getElementById("dashboard");
+    const workpaper = document.getElementById("workpaper");
+    const form = document.getElementById("workpaperForm");
+    const saveStatus = document.getElementById("saveStatus");
+    const reviewSection = document.getElementById("reviewSection");
+    const referenceSection = document.getElementById("referenceSection");
+
+    function loadWorkpaper() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        return saved ? JSON.parse(saved) : null;
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function updateProgress() {
+      const saved = loadWorkpaper();
+
+      document.getElementById("progress").textContent = saved
+        ? "Workpaper saved locally · Last saved: " + saved.savedAt
+        : "Workpapers completed: 0";
+    }
+
+    function openWorkpaper() {
+      dashboard.classList.add("hidden");
+      workpaper.classList.remove("hidden");
+
+      const saved = loadWorkpaper();
+
+      if (saved) {
+        document.getElementById("risk").value = saved.risk || "";
+        document.getElementById("impact").value = saved.impact || "";
+        document.getElementById("control").value = saved.control || "";
+
+        saveStatus.textContent =
+          "Your previous answers were restored from this browser.";
+        saveStatus.classList.remove("hidden");
+        reviewSection.classList.remove("hidden");
+      }
+    }
+
+    function saveWorkpaper(event) {
+      event.preventDefault();
+
+      const submission = {
+        caseId: caseStudy.id,
+        risk: document.getElementById("risk").value.trim(),
+        impact: document.getElementById("impact").value.trim(),
+        control: document.getElementById("control").value.trim(),
+        savedAt: new Date().toLocaleString()
+      };
+
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(submission));
+
+        saveStatus.textContent =
+          "Workpaper saved in this browser. Your answers have not been graded.";
+        saveStatus.classList.remove("hidden");
+
+        reviewSection.classList.remove("hidden");
+        referenceSection.classList.add("hidden");
+
+        updateProgress();
+      } catch (error) {
+        saveStatus.textContent =
+          "The browser could not save your work. You can still review the criteria.";
+        saveStatus.classList.remove("hidden");
+        reviewSection.classList.remove("hidden");
+      }
+    }
+
+    document.getElementById("startButton").addEventListener(
+      "click",
+      openWorkpaper
+    );
+
+    document.getElementById("backButton").addEventListener("click", function() {
+      workpaper.classList.add("hidden");
+      dashboard.classList.remove("hidden");
+      updateProgress();
+    });
+
+    document.getElementById("referenceButton").addEventListener(
+      "click",
+      function() {
+        referenceSection.classList.remove("hidden");
+      }
+    );
+
+    document.getElementById("hideReferenceButton").addEventListener(
+      "click",
+      function() {
+        referenceSection.classList.add("hidden");
+      }
+    );
+
+    form.addEventListener("submit", saveWorkpaper);
+
+    updateProgress();
+  </script>
+</body>
+</html>
